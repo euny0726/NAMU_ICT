@@ -1,0 +1,236 @@
+//form
+$form_color: #222;
+$tbl_bt: 2px solid #000;
+$tbl_bb: #bbb;
+$tbl_border: 1px solid #eee;
+$tbl_th_bg: #F9F9F9;
+$int_bg: #f9f9f9;
+$min500: 500px;
+$min700: 700px;
+$min900: 900px;
+$break_pc: 1024px;
+$break_tab: 768px;
+$break_mob: 320px;
+
+.bt {border-top: $tbl_bt}
+.scroll-y {overflow-y: auto;}
+.scroll-x {overflow-x: auto;}
+.min500 {min-width: $min500;}
+.min700 {min-width: $min700;}
+.min900 {min-width: $min900;}
+
+@mixin form_style {
+    height: 40px;
+    line-height: 40px;
+    @include border_style;
+}
+@mixin form_style_web {
+    height: 48px;
+    line-height: 48px;
+    @include border_style;
+}
+@mixin checkbox {
+    width: 20px;
+    height: 20px;
+@include border_style;
+}
+@mixin radiokbox {
+    width: 20px;
+    height: 20px;
+    @include border_style;
+border-radius: 50%;
+}
+@mixin checked {
+    border-color: #1FA8CD;
+}
+
+@mixin mobile {
+    @media (max-width: #{$break_tab - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$break_tab}) and (max-width: #{$break_pc - 1px}) {
+        @content;
+    }
+}
+
+@mixin pc {
+    @media (min-width: #{$break_pc}) {
+        @content;
+    }
+}
+
+.checkbox input[type="checkbox"], .radiobox input[type="radio"] {
+    display: none;
+}
+.checkbox input[type="checkbox"] + label {
+    display: inline-block;
+    position: relative;
+    cursor: pointer; 
+    vertical-align: middle;
+
+    &::before {
+        @include checkbox;
+    }
+}
+.checkbox input[type="checkbox"]:checked + label::before {
+    background: url('/_user/disabled/img/layout/ico-checkbox.png') 50% no-repeat;
+    @include checked;
+}
+
+.int {
+    display: block;
+    padding: 0 10px;
+    background: $int_bg;
+    width: 100%;
+    color: $form_color;
+    font-size: 14px;
+    @include form_style;
+}
+select.int {
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    -moz-appearance: none;
+    background: #fff url('/_user/img/sub/ico-select.svg') 95% 52% no-repeat;
+    -ms-background-position-x: 98%;
+}
+textarea.int {
+    resize: none;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    line-height: 1.5;
+    height: 100px;
+    background: $int_bg;
+}
+.int.type3 {max-width: 500px;}
+
+@include tablet {
+    .int {
+        @include form_style_web;
+    }
+    .int.type1 {max-width: 300px; width: 33.33%;}
+    .int.type2 {max-width: 180px; width: 33.33%;}
+    .int.type4 {max-width: 345px; width: 100%;}
+    textarea.int {height: 235px;}
+}
+
+//table
+$tbl_color: #111;
+$tbl_border: 1px solid #DDD;
+.tbl {border-bottom: $tbl-border; width: 100%;}
+.tbl .tbl-head {display:table; width:100%;  border-top:2px solid #012b5d; border-bottom: 1px solid #012b5d;}
+.tbl .tbl-head .col {text-align:center; color:$tbl_color;}
+.tbl .tbl-row {width:100%; display:table; table-layout:fixed;}
+.tbl .tbl-row:hover {background: #fff4f6;}
+.tbl .tbl-row .col {border-top:$tbl_border; word-break:break-all;}
+.tbl .tbl-row:first-child .col {border-top:none;}
+.tbl .col {padding:13px; display:table-cell; vertical-align:middle; letter-spacing: -1.5px;}
+.tbl col.col {display: table-column;}
+.tbl .col:first-child {border-left:none;}
+.tbl .col.tc {text-align:center;}
+.tbl_wrap .col.dot {overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.tbl.tc {text-align:center;}
+table.tbl {letter-spacing: 0;}
+.tbl thead {background: $tbl_th_bg; width:100%; border-bottom: 1px solid #ddd;}
+.tbl thead th {text-align:center; color:$tbl_color; font-weight: 700; background: $tbl_th_bg; }
+.tbl tbody th {color:$tbl_color; background: $tbl_th_bg; font-weight: 700;}
+.tbl tbody tr {border-top:$tbl_border; word-break:break-all;}
+.tbl tbody tr:first-child {border-top:none;}
+.tbl td, .tbl th {color: #111; font-size: 15px; padding: 16px 10px; border-right :1px solid #ddd; font-weight: 400; vertical-align: middle; word-break: break-all; box-sizing: border-box;}
+.tbl td:last-of-type, .tbl thead th:last-of-type {border-right: none;}
+.tbl-wrap.scroll {overflow-x: auto;}
+.tbl-wrap .bl {border-left: $tbl_border;}
+.tbl-wrap .br {border-right: $tbl_border;}
+.tbl-wrap .bt {border-top: $tbl_border;}
+.tbl-wrap .bb {border-bottom: $tbl_border;}
+.brn {border-right: none !important;}
+.bln {border-left: none !important;}
+
+@media screen and (max-width: 768px) {
+    .col.min-wid75 {width: 75px;}
+
+}
+
+@include pc {
+    .tbl th, .tbl td {font-size: 20px;}
+}
+
+/*form 입력*/
+.form-wrap {
+    border: 1px solid #DEDEDE; padding: 20px; color: $form_color;
+
+    .form-tit {
+        margin-top: 3px; font-weight: 500; font-size: 14px; color: #111;
+        .star {display: inline-block; margin-left: 5px;}
+    }
+    .form-tr {padding-bottom: 15px;}
+    .form-input {
+        border: 1px solid #ddd; height: 40px; padding: 5px; box-sizing: border-box; color: #666;
+        input {width: 100%; height: 100%;}
+        &.type2 {
+            border: none; padding: 0; height: auto;
+            input {padding: 5px 5px 5px 14px; border: 1px solid #DEDEDE; box-sizing: border-box; height: 40px;}
+        }
+        &.flex {
+            align-items: center;
+            label.exist {white-space: nowrap; padding-left: 5px;}
+        }
+
+        .btn {min-width: 80px; border: 1px solid #136C9D; color: #136C9D; box-sizing: border-box;}
+
+        + .checkbox {margin-top: 5px;}
+
+        /*셀렉트 박스*/
+        &.select-box>select {
+            width: 100%; border: 1px solid #ddd; height: 40px; line-height: 30px; margin-bottom: 5px; box-sizing: border-box; padding: 5px;
+            &:last-child {margin-bottom: 0;}
+        }
+    }
+    .textarea {
+        height: auto;
+        border: 1px solid #ddd;
+        padding: 5px;
+
+        >textarea {resize : none; width: 100%; height: 130px;}
+    }
+
+    .flex .btn {margin-left: 10px;}
+}
+
+@include pc {
+    input, textarea {font-size: 16px;}
+    .textarea textarea {height: 300px;}
+}
+
+.scroll-table {
+    position: relative;
+}
+.blur.right.on {
+    position: absolute;
+    transition: all 0.3s;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 25px;
+    opacity: 1;
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%,  rgba(255,255,255,1) 100%);
+}
+.blur.left.on {
+    position: absolute;
+    left: 0;
+    bottom: auto;
+    top: 0;
+    height: 100%;
+    width: 25px;
+    opacity: 1;
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,0) 100%);
+}
+.blur {
+    opacity: 0;
+}

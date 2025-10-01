@@ -1,0 +1,591 @@
+<!--#include file="/_user/html/include/header.html"-->
+<div id="main" class="sub-container">
+    <div class="sub-top info">
+        <h2>경기안내</h2>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumbs">
+                <li class="breadcrumb-item"><a href="#"><span class="ico-home">home</span></a></li>
+                <li class="breadcrumb-item">
+                    <a href="/athletic/guide">경기안내</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">경기장안내</li>
+            </ol>
+        </nav>
+        <div class="category">
+            <button type="button" class="category-btn">
+                <span class="inner-title">경기장안내</span>
+                <span class="arrow"></span>
+            </button>
+            <ul class="category-wrap">
+                <li><button type="button" class="tab-btn">경기일정</button></li>
+                <li><button type="button" class="tab-btn">경기종목</button></li>
+                <li class="active"><button type="button" class="tab-btn">경기장안내</button></li>
+                <li><button type="button" class="tab-btn">대진표</button></li>
+                <li><button type="button" class="tab-btn">경기결과</button></li>
+            </ul>
+        </div>
+    </div>
+    <div class="sub-wrap">
+        <div class="contents">
+            <h3 class="sub-title">경기장안내</h3>
+            <div class="inner">
+                <div class="sub-section">
+                    <p class="section-tit"><span class="tit-bullet"></span><span>종목별 경기장소</span></p>
+                    <div class="scroll-table">
+                        <div class="blur left"></div>
+                        <div class="blur right"></div>
+                        <div class="tbl-wrap common-table scroll-x">
+                            <table class="tbl tc min900">
+                                <caption class="blind">종목별 경기장소</caption>
+                                <colgroup>
+                                    <col style="width: 10%;">
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col style="width: 20%;">
+                                    <col style="width: 25%;">
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th>종목</th>
+                                    <th>5. 29. (목)</th>
+                                    <th>5. 30. (금)</th>
+                                    <th>5. 31. (토)</th>
+                                    <th>경기장</th>
+                                    <th>지번주소</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>육 상</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="athletics">광주종합운동장</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">양벌동 23-9번지</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>수 영</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="swimming">광주종합운동장 수영장</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">양벌동 23-9번지</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="8">축 구</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="soccer">광주종합운동장 보조구장</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">양벌동 23-9번지</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="soccer">퇴촌공설운동장</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">퇴촌면 광동리 530번지</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="soccer">곤지암 호국생활체육공원</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">곤지암 삼리 171</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="soccer">도척그린공원 축구장</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">유정리 210</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="soccer">오포생활체육공원 축구장</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">매산동 626-6</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="soccer">광주공설운동장</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">경안동 120-1</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="soccer">송정남근린공원 축구장</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">송정동 일원</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="soccer">동원대학교 축구장</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">신촌리 산1-1</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>테니스</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="tennis">광주시 테니스돔구장</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">양벌동 19-14번지</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>소프트테니스(사전)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="soft-tennis">광주시 테니스돔구장</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">양벌동 19-14번지</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">배 구</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="volleyball">신현행정문화체육센터</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">신현동 623-11번지</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="volleyball">태전국민체육센터 다목적체육관</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">태전동 124-17</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>탁 구(사전)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="table-tennis">광주실내체육관(탄벌동)</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">탄벌동 일원</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>복 싱</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="boxing">광주시민체육관 다목적체육관(2F)</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">양벌동 33-2</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>역 도</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="weightlifting">오포생활체육공원 체육관, 게이트볼장</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">매산동 626-6</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>씨 름</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="ko-wrestling">초월생활체육공원 씨름장</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">초월 늑현리 193-2</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>유 도</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="judo">동원대학교 실내체육관</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">신촌리 산1-1</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>검 도</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="kendo">동원대학교 실내체육관</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">태전동 7-10</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>궁 도</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="archery">광주시청소년수련관</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">삼리 산26-1</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>태권도</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="taekwondo">광주실내체육관(탄벌동)</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">탄벌동 일원</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>볼 링</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="bowling">광주종합운동장 볼링장</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">양벌동 23-9번지</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>골 프</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="golf">이스트밸리cc</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">건업리 4-43</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>보디빌딩</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="bodybuilding">광주시문화예술의전당</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">송정동 598</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>우 슈</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="wushu">광주중학교 실내체육관</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">경안로 42번길 일원</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>사 격</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="shooting">경기도종합사격장(화성)</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">관외</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>당 구</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="billiards">광주종합운동장 육상경기장</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">송정동 598</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">농 구(사전)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="basketball">DB인재개발원 체육관</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">노곡리 350-1</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="basketball">광주시민체육관 다목적체육관(2F)</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">양벌동 33-2</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>바 둑</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="baduk">광주시민체육관 배드민턴전용구장(B1)</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">양벌동 33-2</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>레슬링</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="wrestling">광주시 반다비장애인체육센터</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">경안동 109=2번지</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">야 구</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="baseball">팀업캠퍼스 야구경기장(2면)</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">삼리 산26-1</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="baseball">광주종합운동장 야구장(1면)</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">삼리 산26-1</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>산악</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="climbing">광주시 인공암벽장(탄벌동)</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">탄벌동 일원</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>댄스스포츠<br>(사전)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="stadium-map">
+                                            <button class="map-btn" data-sports="dancesports">동원대학교 실내체육관</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="address">신촌리 산1-1</p>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="popup-map-wrap">
+                            <div class="map-wrap">
+                                <button type="button" class="pop-map-close">닫기</button>
+                                <div class="map-text">
+                                    <p class="title font-point">경기장 제목이 들어갑니다.</p>
+                                    <div class="address">
+                                        <div class="inner-txt"><p>경기장안내</p> <span>주소가 들어갑니다.</span></div>
+                                        <a href="#lnk" target="_blank" title="새창열림" class="kakaomap-btn">카카오지도로 보기</a>
+                                    </div>
+                                </div>
+                                <div class="map-sel-box">
+                                    <button class="button">경기장1</button>
+                                    <ul class="stadium-map">
+                                        <li><a href="#lnk">경기장1</a></li>
+                                        <li><a href="#lnk">경기장2</a></li>
+                                        <li><a href="#lnk">경기장3</a></li>
+                                    </ul>
+                                </div>
+                                <div class="map-api">
+                                    <div id="map">
+                                        <!-- map api 영역 -->
+                                    </div>
+                                    <div class="custom_zoomcontrol radius_border">
+                                        <span class="zoom-in"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>
+                                        <span class="zoom-out"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--#include file="/_user/html/include/footer.html"-->

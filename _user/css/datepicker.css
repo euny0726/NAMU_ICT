@@ -1,0 +1,134 @@
+﻿@charset "utf-8";
+
+/* DatePicker Container */
+.ie8 .ui-datepicker {border:1px solid #ddd;}
+.ui-datepicker {
+    left: 701px;
+    width: 280px;
+    height: auto;
+    margin: -1px auto 0;
+    /*-webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, .2);
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, .2);*/
+    position: absolute;
+    top: -9999px;
+    background:#fff;
+    border-radius: 3px;
+    padding: 20px;
+    box-shadow: 0 0 5px 1px rgba(0,0,0,.2);
+}
+.ui-datepicker a {
+    text-decoration: none;
+}
+/* DatePicker Table */
+.ui-datepicker table {
+    width: 100%;
+    font-size:14px;
+    margin-top: 15px;
+    border-top: 1px solid #dbdbdb;
+    border-left: 1px solid #dbdbdb;
+}
+.ui-datepicker-header {
+    line-height: 36px;
+}
+.ui-datepicker-title {
+    text-align: center;
+    color:#003288;
+    font-weight: 500;
+    font-size: 24px;
+}
+.ui-datepicker-prev, .ui-datepicker-next {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    text-align: center;
+    cursor: pointer;
+    background: url('/_user/sports-all-festival/img/sub/ico-cal-prev.png') no-repeat 50%;
+    line-height: 1000%;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+.ui-datepicker-prev {
+    float: left;
+}
+.ui-datepicker-next {
+    float: right;
+    background-image: url('/_user/sports-all-festival/img/sub/ico-cal-next.png');
+}
+/*.ui-datepicker-prev:hover, .ui-datepicker-next:hover {*/
+    /*display: inline-block;*/
+    /*width: 35px;*/
+    /*height: 35px;*/
+    /*text-align: center;*/
+    /*cursor: pointer;*/
+    /*background: url('/yp_cheongwon/images/sub/datepicker-arrow-on.png') no-repeat;*/
+    /*line-height: 1000%;*/
+    /*overflow: hidden;*/
+/*}*/
+/*.ui-datepicker-prev:hover {*/
+    /*float: left;*/
+    /*background-position: center -27px;*/
+/*}*/
+/*.ui-datepicker-next:hover {*/
+    /*float: right;*/
+    /*background-position: center 3px;*/
+/*}*/
+.ui-datepicker th {
+    font-size: 14px;
+    padding: 2px 0;
+    color: #111;
+    background: #F7F7F7;
+    font-weight: normal;
+    border-bottom: 1px solid #dbdbdb;
+    border-right: 1px solid #dbdbdb;
+}
+.ui-datepicker tbody td {
+    padding: 0;
+    border-bottom: 1px solid #dbdbdb;
+    border-right: 1px solid #dbdbdb;
+}
+.ui-datepicker td span, .ui-datepicker td a {
+    display: block;
+    text-align: center;
+    line-height: 35px;
+}
+.ui-datepicker-calendar .ui-state-hover {
+    color: #fff;
+    background: #003288;
+}
+.ui-datepicker-calendar .ui-datepicker-today {background: #F3F9FF;}
+.ui-datepicker-calendar .ui-datepicker-today .ui-state-hover {
+    color:#fff;
+    background: #003288;
+}
+.ui-datepicker-calendar .ui-state-active {
+    background: #666666;
+    color:#fff;
+    position: relative;
+}
+.ui-datepicker-unselectable .ui-state-default {
+    display: none;
+}
+.ui-datepicker-calendar td:first-child .ui-state-active {
+    width: 29px;
+    margin-left: 0;
+}
+.ui-datepicker-calendar td:last-child .ui-state-active {
+    width: 29px;
+    margin-right: 0;
+}
+.ui-datepicker-calendar tr:last-child .ui-state-active {
+    height: 29px;
+    margin-bottom: 0;
+}
+
+.ui-datepicker-calendar thead .ui-datepicker-week-end:first-child {color: #FF7575;}
+.ui-datepicker-calendar thead .ui-datepicker-week-end:last-child {color: #10A0CF;}
+.ui-datepicker .ui-datepicker-other-month a {color: #aaa;}
+.ui-datepicker td a {color: #111;}
+
+
+
+
+
+

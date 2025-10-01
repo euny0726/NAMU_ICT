@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> 오류 페이지</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+        <meta name="description" content="">
+        <link rel="icon" href="/_user/img/layout/16xfavi.ico" sizes="16x16">
+        <link rel="icon" href="/_user/img/layout/72xfavi.ico" sizes="72x72">
+        <link rel="icon" href="/_user/img/layout/114xfavi.ico" sizes="114x114">
+        <link rel="stylesheet" href="/_user/css/common.css">
+        <link rel="stylesheet" href="/_user/css/layout.css">
+        <link rel="stylesheet" href="/_user/css/sub.css">
+        <script src="/_user/js/common/jquery-3.4.1.min.js"></script>
+        <script>
+            function fn_back(){
+                //location.href = "/";
+                history.back();
+            }
+        </script>
+    </head>
+    <body>
+    <div class="error-wrap">
+        <div class="error">
+            <div class="error-top">
+                <img src="/_user/img/layout/ani-logo.gif" alt="오류">
+            </div>
+            <div class="error-bottom">
+                <strong>페이지를 찾을 수 없습니다!</strong>
+                <p>서비스 이용에 불편을 드려 죄송합니다.</p>
+                <p>현재 페이지가 존재하지 않거나, <br>이용할 수 없는 페이지입니다.</p>
+                <div class="btn-wrap">
+                    <a href="#lnk">이전으로 돌아가기</a>
+                    <a href="#lnk">메인으로 돌아가기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

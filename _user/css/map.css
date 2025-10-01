@@ -1,0 +1,66 @@
+@charset "utf-8";
+:root {
+    /*--point-color: #1E2C8D;*/
+    --game-box-color: #6B1685;
+    --table-border-color: #00235D;
+    --point-bg: linear-gradient(90deg, #C5135E 0%, #1D2A75 100%); /* 그라데이션 */
+}
+
+.popup-map-wrap {display: none; padding: 30px; position: fixed; left: 0; right: 0; top: 0; bottom: 0; background: rgba(0,0,0,0.6); align-items: center; justify-content: center; z-index: 21;}
+.popup-map-wrap.open {display: flex !important;}
+.map-wrap {padding: 30px; position: relative; background: #fff; width: 100%; max-width: 1340px; border: 1px solid #072995; box-sizing: border-box; box-shadow: 0 0 20px rgba(0,0,0,0.3); border-radius: 20px;}
+.map-api #map {width: 100%; height: 300px; background: #ddd;}
+.map-api #popmap {width: 100%; height: 470px;}
+.map-sel-box {position: relative; display: inline-block; width: 100%;}
+.map-sel-box>button {padding: 10px 20px; background: #fff; display: flex; align-items: center; justify-content: space-between; width: 100%; border: 1px solid #919293; border-radius: 5px;}
+.map-sel-box>button:after {content: ''; width: 12px; height: 10px; display: block; margin-left: 15px; background: url('/_user/img/sub/icon-select.png') 50% no-repeat;}
+.map-sel-box>button.on:after {transform: rotate(180deg);}
+.map-sel-box .stadium-map {display: none; position: absolute; z-index: 10; top: 36px; left: 0; min-width: 100%; box-sizing: border-box; background: #fff; border: 1px solid #919293;}
+.map-sel-box .stadium-map.on {}
+.map-sel-box .stadium-map>li>a {padding: 10px 20px; display: block;}
+.map-sel-box .stadium-map>li.active {background: var(--point-bg);}
+.map-sel-box .stadium-map>li.active>a {color: #fff;}
+.map-sel-box .stadium-map>li:nth-child(n+2) {border-top: 1px solid #919293;}
+.stadium-map .map-btn {color: var(--point-color); font-size: 15px; text-decoration: underline; text-underline-position: under;}
+.map-api {padding-top: 20px;}
+.popup-map-wrap.open .stadium-map {top: 36px; bottom: auto;}
+.popup-map-wrap.open .map-sel-box {margin-top: 0;}
+.map_wrap {position:relative;overflow:hidden;width:100%;height:350px;}
+.radius_border{border:1px solid #919191;border-radius:5px;}
+.custom_zoomcontrol {position:absolute;top: 160px;right:40px;width:36px;height:80px;overflow:hidden;z-index:1;background-color:#f5f5f5;}
+.custom_zoomcontrol span {display:block;width:36px;height:40px;text-align:center;cursor:pointer;}
+.custom_zoomcontrol span img {width:15px;height:15px;padding:12px 0;border:none;}
+.custom_zoomcontrol span:first-child{border-bottom:1px solid #bfbfbf;}
+.map-text {padding-bottom: 20px;}
+.map-text .title, .address span {display: none;}
+.sports-address {display: block; margin-top: 20px; padding-top: 10px; padding-left: 5px; border-top: 1.5px solid var(--point-color2); color: #111; font-weight: 400;}
+.kakaomap-btn {height: 35px; display: flex; align-items: center; justify-content: center; color: #fff; background: #333333; border-radius: 45px; font-size: 13px; margin-left: 10px; line-height: 35px; padding: 0 20px; box-sizing: border-box; font-weight: 300; font-family: GmarketSans;}
+.map-wrap .pop-map-close {position: absolute; right: 10px; top: 10px; text-indent: -9999px; width: 30px; height: 30px;}
+.map-wrap .pop-map-close:after {content: ''; position: absolute; left: 6px; top: 14px; width: 18px; height: 2px; background: #000; display: block; transform: rotate(45deg);}
+.map-wrap .pop-map-close:before {content: ''; position: absolute; left: 6px; top: 14px; width: 18px; height: 2px; background: #000; display: block; transform: rotate(-45deg);}
+.address p {color: var(--point-color2); font-family: GmarketSans; font-size: 20px; font-weight: 600;}
+.address {display: flex; align-items: center;}
+@media screen and (min-width: 1024px){
+    .sub-map-box .map-api {display: none;}
+    .map-sel-box {width: 98%;}
+    .popup-map-wrap.open .map-sel-box {margin-top: 0; width: 300px;}
+    .popup-map-wrap.open .map-sel-box>button {padding: 17px; font-size: 16px; border: 1px solid #919293; color: #111; background: none;}
+    .popup-map-wrap.open .map-sel-box>button:after {background: url('/_user/img-select.png') 50% no-repeat;}
+    .popup-map-wrap.open .map-sel-box>button.on {border-radius: 5px 5px 0 0;}
+    .popup-map-wrap.open .map-wrap {display: flex; flex-wrap: wrap; justify-content: space-between; padding: 40px 55px 55px;}
+    .map-wrap .map-api {padding-top: 50px; width: 100%; position: relative;}
+    .popup-map-wrap.open .map-sel-box .stadium-map {bottom: auto; top: 54px; border-radius: 0 0 5px 5px;}
+    .popup-map-wrap.open .map-sel-box .stadium-map>li>a {color: #111; padding: 17px;}
+    .popup-map-wrap.open .map-sel-box .stadium-map>li.active>a {color: #fff;}
+    .map-sel-box>button:after {transform: rotate(180deg);}
+    .map-text {padding-bottom: 0;}
+    .map-text .title {font-size: 40px; color: var(--point-color2); letter-spacing: -0.8px; padding-right: 30px; font-weight: 700; line-height: 1.2; box-sizing: border-box;}
+    .map-text .address p {font-size: 24px; letter-spacing: -0.6px;}
+    .sub-info-tit + .kakaomap-btn {display: none;}
+    .kakaomap-btn {height: 46px; margin-left: 20px; font-size: 14px; line-height: 32px;}
+    .custom_zoomcontrol {top: 70px; right: 10px;}
+    .map-text .title, .address span {display: block;}
+    .stadium-map .map-btn {font-size: 16px; transition: .3s; }
+    .stadium-map .map-btn:hover {font-weight: 600;}
+    .address {padding-top: 15px;}
+}

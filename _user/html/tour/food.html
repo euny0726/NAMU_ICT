@@ -1,0 +1,375 @@
+<!--#include file="/_user/html/include/header.html"-->
+<div id="main" class="sub-container">
+    <div class="sub-top tour">
+        <h2>광주관광</h2>
+        <div class="category">
+            <button type="button" class="category-btn">
+                <span class="inner-title">음식정보</span>
+                <span class="arrow"></span>
+            </button>
+            <ul class="category-wrap">
+                <li><button type="button" class="tab-btn">숙박시설</button></li>
+                <li class="active"><button type="button" class="tab-btn">음식정보</button></li>
+                <li><button type="button" class="tab-btn">교통정보</button></li>
+                <li><button type="button" class="tab-btn">광주관광</button></li>
+            </ul>
+        </div>
+    </div>
+    <div class="sub-wrap">
+        <div class="contents">
+            <h3 class="sub-title">음식정보</h3>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumbs">
+                    <li class="breadcrumb-item"><a href="#"><span class="ico-home">home</span></a></li>
+                    <li class="breadcrumb-item"><a href="#">경기안내</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">음식정보</li>
+                </ol>
+            </nav>
+            <div class="inner">
+                <div class="tab-container">
+                    <div class="tab-box">
+                        <ul class="tab-nav type02">
+                            <li class="on"><a href="#lnk" title="전체">전체</a></li>
+                            <li><a href="#lnk" title="모범음식점">모범음식점</a></li>
+                            <li><a href="#lnk" title="일반음식점">일반음식점</a></li>
+                            <li><a href="#lnk" title="카페">카페</a></li>
+                        </ul>
+                    </div>
+                    <ul class="tab-content">
+                        <li class="list on">
+                            <div class="board-top">
+                                <p><span>총 <em class="total">486</em></span> 건의 게시물이 있습니다.</p>
+                                <div class="board-btn-box">
+                                    <div class="search-box">
+                                        <form action="abc.php">
+                                            <fieldset>
+                                                <legend class="screen-out">검색어 입력 폼</legend>
+                                                <div class="search-box" title="구역 선택">
+<!--                                                    <select class="sel area">-->
+<!--                                                        <option value="1">구역</option>-->
+<!--                                                        <option value="2">광주읍</option>-->
+<!--                                                        <option value="3">설악면</option>-->
+<!--                                                        <option value="4">청평면</option>-->
+<!--                                                        <option value="5">상면</option>-->
+<!--                                                        <option value="6">조종면</option>-->
+<!--                                                        <option value="7">북면</option>-->
+<!--                                                    </select>-->
+                                                    <select class="sel" title="검색 카테고리 선택">
+                                                        <option value="1">전체</option>
+                                                        <option value="2">업소명</option>
+                                                        <option value="3">주소</option>
+                                                    </select>
+                                                    <div class="input-box">
+                                                        <input type="text" id="searchCnd" placeholder="제목을 입력해 주세요.">
+                                                        <label for="searchCnd"></label>
+                                                        <button type="button" class="btn-search">검색</button>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="link-btn-wrap table-link-box">
+                                <a href="#lnk" class="link-btn down-btn" title="다운로드">음식정보 다운로드 <span class="ico-down"></span></a>
+                            </div>
+                            <div class="scroll-table">
+                                <div class="blur left"></div>
+                                <div class="blur right on"></div>
+                                <div class="tbl-wrap common-table scroll-x">
+                                    <table class="tbl tc min900">
+                                        <caption class="blind">행사일정</caption>
+                                        <colgroup>
+                                            <col>
+                                            <col>
+                                            <col style="width: 20%;">
+                                            <col style="width: 32%;">
+                                            <col style="width: 13%;">
+                                            <col>
+                                            <col>
+                                        </colgroup>
+                                        <thead>
+                                        <tr>
+                                            <th>번호</th>
+                                            <th>동</th>
+                                            <th>업소명</th>
+                                            <th>주소</th>
+                                            <th>연락처</th>
+                                            <th>등급</th>
+                                            <th>객실수</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>15</td>
+                                            <td>창곡동</td>
+                                            <td>밀리토피아호텔</td>
+                                            <td>경기도 광주시 수정구 위례대로 83 (창곡동)</td>
+                                            <td>031-727-9300</td>
+                                            <td>4성급</td>
+                                            <td>176</td>
+                                        </tr>
+                                        <tr>
+                                            <td>14</td>
+                                            <td>창곡동</td>
+                                            <td>호텔야자 관광호텔</td>
+                                            <td>경기도 광주시 수정구 위례광장로 9-10 (창곡동)</td>
+                                            <td>031-759-0508</td>
+                                            <td>1성급</td>
+                                            <td>35</td>
+                                        <tr>
+                                            <td>13</td>
+                                            <td>시흥동</td>
+                                            <td>나인트리프리미어 호텔 서울판교</td>
+                                            <td>경기도 광주시 수정구 창업로 18 (시흥동)</td>
+                                            <td>031-5178-5099</td>
+                                            <td>4성급</td>
+                                            <td>315</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12</td>
+                                            <td>광주동</td>
+                                            <td>바인호텔</td>
+                                            <td>경기도 광주시 중원구 산성대로 184 (광주동)</td>
+                                            <td>031-5178-5099</td>
+                                            <td>2성급</td>
+                                            <td>66</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12</td>
+                                            <td>광주동</td>
+                                            <td>바인호텔</td>
+                                            <td>경기도 광주시 중원구 산성대로 184 (광주동)</td>
+                                            <td>031-721-3350</td>
+                                            <td>2성급</td>
+                                            <td>66</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12</td>
+                                            <td>광주동</td>
+                                            <td>바인호텔</td>
+                                            <td>경기도 광주시 중원구 산성대로 184 (광주동)</td>
+                                            <td>031-721-3350</td>
+                                            <td>2성급</td>
+                                            <td>66</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12</td>
+                                            <td>광주동</td>
+                                            <td>바인호텔</td>
+                                            <td>경기도 광주시 중원구 산성대로 184 (광주동)</td>
+                                            <td>031-721-3350</td>
+                                            <td>2성급</td>
+                                            <td>66</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="pager">
+                                    <div class="mobshow">
+                                        <a href="#lnk" class="pager-first"><span class="screen-out">처음</span></a>
+                                        <a href="#lnk" class="pager-prev"><span class="screen-out">이전</span></a>
+                                        <span class="pager-numlist">
+                                        <a href="#lnk" class="pager-num active"><span class="screen-out">현재 페이지</span>1</a>
+                                        <a href="#lnk" class="pager-num">2</a>
+                                        <a href="#lnk" class="pager-num">3</a>
+                                        <a href="#lnk" class="pager-num">4</a>
+                                        <a href="#lnk" class="pager-num">5</a>
+                                    </span>
+                                        <a href="#lnk" class="pager-next"><span class="screen-out">다음</span></a>
+                                        <a href="#lnk" class="pager-last"><span class="screen-out">마지막</span></a>
+                                    </div>
+                                    <div class="mobhide">
+                                        <a href="#lnk" class="pager-first" title="처음으로"><span class="screen-out">처음</span></a>
+                                        <a href="#lnk" class="pager-prev" title="이전"><span class="screen-out">이전</span></a>
+                                        <span class="pager-numlist">
+                                        <a href="#lnk" class="pager-num active"><span class="screen-out">현재 페이지</span>1</a>
+                                        <a href="#lnk" class="pager-num">2</a>
+                                        <a href="#lnk" class="pager-num">3</a>
+                                        <a href="#lnk" class="pager-num">4</a>
+                                        <a href="#lnk" class="pager-num">5</a>
+                                        <a href="#lnk" class="pager-num">6</a>
+                                        <a href="#lnk" class="pager-num">7</a>
+                                        <a href="#lnk" class="pager-num">8</a>
+                                        <a href="#lnk" class="pager-num">9</a>
+                                        <a href="#lnk" class="pager-num">10</a>
+                                    </span>
+                                        <a href="#lnk" class="pager-next" title="다음"><span class="screen-out">다음</span></a>
+                                        <a href="#lnk" class="pager-last" title="마지막으로"><span class="screen-out">마지막</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list">
+                            <div class="board-top">
+                                <p><span>총 <em class="total">486</em></span> 건의 게시물이 있습니다.</p>
+                                <div class="board-btn-box">
+                                    <div class="search-box">
+                                        <form action="abc.php">
+                                            <fieldset>
+                                                <legend class="screen-out">검색어 입력 폼</legend>
+                                                <div class="search-box" title="구역 선택">
+                                                    <!--                                                    <select class="sel area">-->
+                                                    <!--                                                        <option value="1">구역</option>-->
+                                                    <!--                                                        <option value="2">광주읍</option>-->
+                                                    <!--                                                        <option value="3">설악면</option>-->
+                                                    <!--                                                        <option value="4">청평면</option>-->
+                                                    <!--                                                        <option value="5">상면</option>-->
+                                                    <!--                                                        <option value="6">조종면</option>-->
+                                                    <!--                                                        <option value="7">북면</option>-->
+                                                    <!--                                                    </select>-->
+                                                    <select class="sel" title="검색 카테고리 선택">
+                                                        <option value="1">전체</option>
+                                                        <option value="2">업소명</option>
+                                                        <option value="3">주소</option>
+                                                    </select>
+                                                    <div class="input-box">
+                                                        <input type="text" id="searchCnd" placeholder="제목을 입력해 주세요.">
+                                                        <label for="searchCnd"></label>
+                                                        <button type="button" class="btn-search">검색</button>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="link-btn-wrap table-link-box">
+                                <a href="#lnk" class="link-btn down-btn" title="다운로드">음식정보 다운로드 <span class="ico-down"></span></a>
+                            </div>
+                            <div class="scroll-table">
+                                <div class="blur left"></div>
+                                <div class="blur right on"></div>
+                                <div class="tbl-wrap common-table scroll-x">
+                                    <table class="tbl tc min900">
+                                        <caption class="blind">행사일정</caption>
+                                        <colgroup>
+                                            <col>
+                                            <col>
+                                            <col style="width: 20%;">
+                                            <col style="width: 32%;">
+                                            <col style="width: 13%;">
+                                            <col>
+                                            <col>
+                                        </colgroup>
+                                        <thead>
+                                        <tr>
+                                            <th>번호</th>
+                                            <th>동</th>
+                                            <th>업소명</th>
+                                            <th>주소</th>
+                                            <th>연락처</th>
+                                            <th>등급</th>
+                                            <th>객실수</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>15</td>
+                                            <td>창곡동</td>
+                                            <td>밀리토피아호텔</td>
+                                            <td>경기도 광주시 수정구 위례대로 83 (창곡동)</td>
+                                            <td>031-727-9300</td>
+                                            <td>4성급</td>
+                                            <td>176</td>
+                                        </tr>
+                                        <tr>
+                                            <td>14</td>
+                                            <td>창곡동</td>
+                                            <td>호텔야자 관광호텔</td>
+                                            <td>경기도 광주시 수정구 위례광장로 9-10 (창곡동)</td>
+                                            <td>031-759-0508</td>
+                                            <td>1성급</td>
+                                            <td>35</td>
+                                        <tr>
+                                            <td>13</td>
+                                            <td>시흥동</td>
+                                            <td>나인트리프리미어 호텔 서울판교</td>
+                                            <td>경기도 광주시 수정구 창업로 18 (시흥동)</td>
+                                            <td>031-5178-5099</td>
+                                            <td>4성급</td>
+                                            <td>315</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12</td>
+                                            <td>광주동</td>
+                                            <td>바인호텔</td>
+                                            <td>경기도 광주시 중원구 산성대로 184 (광주동)</td>
+                                            <td>031-5178-5099</td>
+                                            <td>2성급</td>
+                                            <td>66</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12</td>
+                                            <td>광주동</td>
+                                            <td>바인호텔</td>
+                                            <td>경기도 광주시 중원구 산성대로 184 (광주동)</td>
+                                            <td>031-721-3350</td>
+                                            <td>2성급</td>
+                                            <td>66</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12</td>
+                                            <td>광주동</td>
+                                            <td>바인호텔</td>
+                                            <td>경기도 광주시 중원구 산성대로 184 (광주동)</td>
+                                            <td>031-721-3350</td>
+                                            <td>2성급</td>
+                                            <td>66</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12</td>
+                                            <td>광주동</td>
+                                            <td>바인호텔</td>
+                                            <td>경기도 광주시 중원구 산성대로 184 (광주동)</td>
+                                            <td>031-721-3350</td>
+                                            <td>2성급</td>
+                                            <td>66</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="pager">
+                                    <div class="mobshow">
+                                        <a href="#lnk" class="pager-first"><span class="screen-out">처음</span></a>
+                                        <a href="#lnk" class="pager-prev"><span class="screen-out">이전</span></a>
+                                        <span class="pager-numlist">
+                                        <a href="#lnk" class="pager-num active"><span class="screen-out">현재 페이지</span>1</a>
+                                        <a href="#lnk" class="pager-num">2</a>
+                                        <a href="#lnk" class="pager-num">3</a>
+                                        <a href="#lnk" class="pager-num">4</a>
+                                        <a href="#lnk" class="pager-num">5</a>
+                                    </span>
+                                        <a href="#lnk" class="pager-next"><span class="screen-out">다음</span></a>
+                                        <a href="#lnk" class="pager-last"><span class="screen-out">마지막</span></a>
+                                    </div>
+                                    <div class="mobhide">
+                                        <a href="#lnk" class="pager-first" title="처음으로"><span class="screen-out">처음</span></a>
+                                        <a href="#lnk" class="pager-prev" title="이전"><span class="screen-out">이전</span></a>
+                                        <span class="pager-numlist">
+                                        <a href="#lnk" class="pager-num active"><span class="screen-out">현재 페이지</span>1</a>
+                                        <a href="#lnk" class="pager-num">2</a>
+                                        <a href="#lnk" class="pager-num">3</a>
+                                        <a href="#lnk" class="pager-num">4</a>
+                                        <a href="#lnk" class="pager-num">5</a>
+                                        <a href="#lnk" class="pager-num">6</a>
+                                        <a href="#lnk" class="pager-num">7</a>
+                                        <a href="#lnk" class="pager-num">8</a>
+                                        <a href="#lnk" class="pager-num">9</a>
+                                        <a href="#lnk" class="pager-num">10</a>
+                                    </span>
+                                        <a href="#lnk" class="pager-next" title="다음"><span class="screen-out">다음</span></a>
+                                        <a href="#lnk" class="pager-last" title="마지막으로"><span class="screen-out">마지막</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list">일반음식점</li>
+                        <li class="list">카페</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--#include file="/_user/html/include/footer.html"-->

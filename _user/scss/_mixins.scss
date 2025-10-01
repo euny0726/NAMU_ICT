@@ -1,0 +1,31 @@
+@import "variables";
+
+@mixin mobile {
+    @media (max-width: #{$break_tab - 1px}) {
+      @content;
+    }
+}
+  
+@mixin tablet {
+    @media (min-width: #{$break_tab}) and (max-width: #{$break_pc - 1px}) {
+      @content;
+    }
+}
+  
+@mixin pc {
+    @media (min-width: #{$break_pc}) {
+      @content;
+    }
+}
+
+@mixin tablet_pc {
+  @media (min-width: #{$break_tab}) {
+    @content;
+  }
+}
+
+@mixin mobile_tablet {
+  @media (max-width: #{$break_pc - 1px}) {
+    @content;
+  }
+}
