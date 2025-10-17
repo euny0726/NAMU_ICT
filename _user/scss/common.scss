@@ -97,8 +97,8 @@ html , body {height: 100%;}
   margin: 0;
   visibility: hidden;
 }
-.dimm {position: fixed; left: 0; top: 0; bottom: 0; opacity: 0; width: 100%; height: 0; /*background: rgba(0,0,0,.7);*/ transition: all 0.3s;}
-.dimm.on {opacity: 1;height: auto; z-index: 20;}
+.dimm {position: fixed; left: 0; top: 0; bottom: 0; opacity: 0; width: 100%; height: 0; background: rgba(0,0,0,.7); transition: all 0.3s;}
+.dimm.on {opacity: 1;height: auto; z-index: 5;}
 .mobhide, .webshow {display: none;}
 .mobshow {display: block;}
 
@@ -462,19 +462,23 @@ $cancelButtonDarken: darken($cancelButtonColor, 10%);
 //pager
 .pager {text-align:center; padding-top: 50px;}
 .pager-num {float: left; color: #111;}
-.pager-first, .pager-prev, .pager-next, .pager-last, .pager-num {box-sizing: border-box; width: 26px; height: 26px; line-height: 28px; display: inline-block; margin-left: 3px; font-size: 14px;}
+.pager-first, .pager-prev, .pager-next, .pager-last, .pager-num {box-sizing: border-box; width: 26px; height: 26px; line-height: 28px; display: inline-block; margin-left: 5px; font-size: 14px; border-radius: 8px; background: #fff;}
 .pager-first:hover, .pager-prev:hover, .pager-next:hover, .pager-last:hover,
 .pager-first:focus, .pager-prev:focus, .pager-next:focus, .pager-last:focus {border-color: #004098;}
-.pager-num.active, .pager-num:focus {color: #fff; background: var(--point-color2); border-radius: 8px;}
+.pager-num.active, .pager-num:focus {color: #fff; background: var(--point-color);}
 .pager-numlist {overflow: hidden; display: inline-block; line-height: 34px; color: #111;}
-.pager-first {background: url('/_user/imgcon-first.svg') 50% no-repeat;}
-.pager-prev {background: url('/_user/imgcon-prev.svg') 50% no-repeat;}
-.pager-next {background: url('/_user/imgcon-next.svg') 50% no-repeat;}
-.pager-last {background: url('/_user/imgcon-last.svg') 50% no-repeat;}
+.pager-first {background: url('/_user/img/layout/icon-first.svg') 50% no-repeat;}
+.pager-prev {background: url('/_user/img/layout/icon-prev.svg') 50% no-repeat;}
+.pager-next {background: url('/_user/img/layout/icon-next.svg') 50% no-repeat;}
+.pager-last {background: url('/_user/img/layout/icon-last.svg') 50% no-repeat;}
 
 @media all and (min-width: 768px){
   .pager-numlist {color: #111;}
   .pager-first, .pager-prev, .pager-next, .pager-last, .pager-num {width: 40px; height: 40px; line-height: 40px;}
+}
+
+@media all and (min-width: 1024px){
+  .pager {padding-top: 60px;}
 }
 
 //btn
@@ -493,7 +497,8 @@ $cancelButtonDarken: darken($cancelButtonColor, 10%);
     max-width: 150px;
     padding: 11px 0;
     margin-left: 10px;
-    color: var(--point-color);
+    color: #fff;
+    background: var(--point-color);
     border: 1px solid var(--point-color);
     transition: all 0.3s;
     font-size: 14px;
@@ -501,8 +506,9 @@ $cancelButtonDarken: darken($cancelButtonColor, 10%);
     border-radius: 5px;
 
     &:hover {
-      background: var(--point-color);
-      color: #fff;
+      background: #fff;
+      color:  var(--point-color);
+      border: 1px solid var(--point-color);
     }
   }
   .edit-btn {
@@ -547,10 +553,11 @@ $cancelButtonDarken: darken($cancelButtonColor, 10%);
   span.br {display: inline-block;}
 
   .btn-wrap {
+    margin-top: 100px;
     button {
-      font-size: 16px;
-      min-width: 150px;
-      line-height: 50px;
+      font-size: 17px;
+      min-width: 170px;
+      line-height: 63px;
       padding: 0 50px;
       margin-left: 20px;
     }

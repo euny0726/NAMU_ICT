@@ -15,16 +15,18 @@
     <link rel="stylesheet" href="/_user/css/main.css">
     <link rel="stylesheet" href="/_user/css/sub.css">
 
-    <script src="/_user/js/common/jquery-3.4.1.min.js"></script>
+    <script src="/_user/js/common/jquery-3.7.1.min.js"></script>
     <script src="/_user/js/common/jquery-ui-datepicker.min.js"></script>
     <script src="/_user/js/common/swiper.min.js"></script>
     <script src="/_user/js/common/gsap.min.js"></script>
     <script src="/_user/js/common/ScrollTrigger.min.js"></script>
     <script src="/_user/js/common/ScrollToPlugin.min.js"></script>
     <script src="/_user/js/layout.js"></script>
-    <script src="/_user/js/main.js"></script>
+<!--    <script src="/_user/js/main.js"></script>-->
     <script src="/_user/js/sub.js"></script>
-<body>
+
+<!-- 서브페이지일 경우 body에 클래스 sub 추가 -->
+<body class="sub">
 <!-- popup s -->
 <!--<div class="popup-wrap">-->
 <!--    <div class="popup-inner">-->
@@ -78,108 +80,76 @@
                 <div class="gnb-wrap">
                     <ul class="gnb">
                         <li class="dep1">
-                            <a href="http://support.springworks.co.kr/main">수강신청</a>
+                            <a href="#lnk">회사소개</a>
                             <div class="dep2-wrap">
+                                <p>회사소개</p>
                                 <ul class="dep2">
-                                    <li><a href="http://support.springworks.co.kr/main">분야별</a></li>
-                                    <li><a href="#lnk" target="_blank" title="새창열림" class="out-lnk">대상별<span></span></a></li>
                                     <li class="child">
-                                        <a href="http://support.springworks.co.kr/main" class="out-lnk">지역별<span></span></a>
-                                        <ul class="dep3">
-                                            <li><a href="#lnk">시내동</a></li>
-                                            <li><a href="#lnk">읍 · 면</a></li>
-                                        </ul>
+                                        <a href="#lnk">회사소개</a>
+<!--                                        <ul class="dep3">-->
+<!--                                            <li><a href="#lnk">3뎁스메뉴</a></li>-->
+<!--                                        </ul>-->
                                     </li>
+                                    <li class="child"><a href="#lnk">연혁</a></li>
+                                    <li class="child"><a href="#lnk">조직도</a></li>
+                                    <li class="child"><a href="#lnk">관계사</a></li>
                                 </ul>
                             </div>
                         </li>
                         <li class="dep1">
-                            <a href="#lnk">학습정보</a>
+                            <a href="#lnk">AI 신약</a>
                             <div class="dep2-wrap">
+                                <p>AI 신약</p>
                                 <ul class="dep2">
-                                    <li class="child">
-                                        <a href="#lnk">강사은행</a>
-                                        <ul class="dep3">
-                                            <li><a href="#lnk">강사현황</a></li>
-                                            <li><a href="#lnk">강사신청</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="child">
-                                        <a href="#lnk">평생교육기관</a>
-                                        <ul class="dep3">
-                                            <li><a href="#lnk">참여기관</a></li>
-                                            <li><a href="#lnk">참여신청</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="child">
-                                        <a href="#lnk">학습동아리</a>
-                                        <ul class="dep3">
-                                            <li><a href="#lnk">소개</a></li>
-                                            <li><a href="#lnk">현황</a></li>
-                                            <li><a href="#lnk">등록</a></li>
-                                            <li><a href="#lnk">신청</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="child">
-                                        <a href="#lnk">학습공간예약</a>
-                                        <ul class="dep3">
-                                            <li><a href="#lnk" target="_blank" title="새창열림" class="out-lnk">학습공간이랑<span></span></a></li>
-                                            <li><a href="#lnk">학습공간현황</a></li>
-                                            <li><a href="#lnk">학습공간예약신청</a></li>
-                                        </ul>
-                                    </li>
+                                    <li class="child"><a href="#lnk">기술개발</a></li>
+                                    <li class="child"><a href="#lnk">파이프라인</a></li>
+                                    <li class="child"><a href="#lnk">플랫폼</a></li>
                                 </ul>
                             </div>
                         </li>
                         <li class="dep1">
-                            <a href="#lnk">소식</a>
+                            <a href="#lnk">프로비저닝</a>
                             <div class="dep2-wrap">
+                                <p>프로비저닝</p>
                                 <ul class="dep2">
-                                    <li><a href="#lnk">올해의 평생교육기관</a></li>
-                                    <li><a href="#lnk">우수교육</a></li>
-                                    <li><a href="#lnk">공지사항</a></li>
-                                    <li><a href="#lnk">기관별소식</a></li>
-                                    <li><a href="#lnk">갤러리</a></li>
-                                    <li><a href="#lnk">자료실</a></li>
-                                    <li><a href="#lnk">설문조사</a></li>
+                                    <li class="child"><a href="#lnk">MABP</a></li>
                                 </ul>
                             </div>
                         </li>
                         <li class="dep1">
-                            <a href="#lnk">고객지원</a>
+                            <a href="#lnk">컴퓨팅</a>
                             <div class="dep2-wrap">
+                                <p>컴퓨팅</p>
                                 <ul class="dep2">
-                                    <li><a href="#lnk">이용안내</a></li>
-                                    <li><a href="#lnk">자주하는 질문</a></li>
-                                    <li class="child">
-                                        <a href="#lnk">1 : 1 문의</a>
-                                        <ul class="dep3">
-                                            <li><a href="#lnk">문의하기</a></li>
-                                            <li><a href="#lnk">문의내용</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#lnk">희망강좌신처</a></li>
+                                    <li class="child"><a href="#lnk">IT인프라 구축 및 운영</a></li>
+                                    <li class="child"><a href="#lnk">클라우드 구축 및 운영</a></li>
+                                    <li class="child"><a href="#lnk">5G 네트워크 인프라</a></li>
+                                    <li class="child"><a href="#lnk">고객사</a></li>
                                 </ul>
                             </div>
                         </li>
                         <li class="dep1">
-                            <a href="#lnk"><em>교육도시, 춘천</em></a>
+                            <a href="#lnk">NEWS</a>
                             <div class="dep2-wrap">
+                                <p>NEWS</p>
                                 <ul class="dep2">
-                                    <li><a href="#lnk">주요사업</a></li>
-                                    <li><a href="#lnk">지원사업</a></li>
-                                    <li><a href="#lnk">인사말</a></li>
-                                    <li class="child">
-                                        <a href="#lnk">비전과 목표</a>
-                                        <ul class="dep3">
-                                            <li><a href="#lnk">비전</a></li>
-                                            <li><a href="#lnk">목표</a></li>
-                                        </ul>
-                                    </li>
+                                    <li class="child"><a href="#lnk">보도자료</a></li>
+                                    <li class="child"><a href="#lnk">회사소식</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="dep1">
+                            <a href="#lnk">Contact us</a>
+                            <div class="dep2-wrap">
+                                <p>Contact us</p>
+                                <ul class="dep2">
+                                    <li class="child"><a href="#lnk">문의하기</a></li>
+                                    <li class="child"><a href="#lnk">오시는 길</a></li>
                                 </ul>
                             </div>
                         </li>
                     </ul>
+                    <a href="#lnk" class="pc-btn-down">회사소개서</a>
                 </div>
                 <div class="inner-btn-wrap">
                     <button type="button" class="menu-btn"><span class="screen-out">메뉴</span></button>

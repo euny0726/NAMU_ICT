@@ -19,8 +19,6 @@ $(document).ready(function(){
     }
     setupFadeUpAnimations();
 
-
-
     // visual-swiper
     let mainVisualList = $('.visual-swiper .swiper-slide').length;
     let mainVisualSlide = new Swiper(".visual-swiper .swiper-container", {
@@ -52,10 +50,10 @@ $(document).ready(function(){
         },
         on: {
             init: function () {
-                mainVisualAnimateText(this.realIndex); // 첫 슬라이드
+                mainVisualAnimateText(this.realIndex);
             },
             slideChange: function () {
-                mainVisualAnimateText(this.realIndex); // loop 대응 realIndex 사용
+                mainVisualAnimateText(this.realIndex);
             }
         }
     });
@@ -88,11 +86,11 @@ $(document).ready(function(){
         }
         if ($('.stop').hasClass('on')) {
             mainVisualSlide.autoplay.start();
-            $('.visual-swiper').removeClass('paused'); // ▶ 다시 재생
+            $('.visual-swiper').removeClass('paused');
         }
         if ($('.play').hasClass('on')) {
             mainVisualSlide.autoplay.stop();
-            $('.visual-swiper').addClass('paused'); // ⏸ 진행바 멈춤
+            $('.visual-swiper').addClass('paused');
         }
     });
 
@@ -162,14 +160,12 @@ $(document).ready(function(){
             });
         };
 
-        // 초기 상태: 가운데 포개기
         gsap.set(cards, {
             xPercent: -50,
             left: "50%",
             rotation: 0
         });
 
-        // ✅ 타임라인을 paused 상태로 생성
         let tl = gsap.timeline({ paused: true });
 
         tl.to(cards[1], { rotation: 8, duration: 0.3, ease: "power1.in", immediateRender: false }, 0)
@@ -186,49 +182,45 @@ $(document).ready(function(){
                 },
                 duration: 1,
                 ease: "power2.out",
-                immediateRender: false // ✅ 새로고침 시 튀는 현상 방지
+                immediateRender: false
             });
 
-        // ✅ ScrollTrigger: 카드 섹션 도달 시 실행
         ScrollTrigger.create({
             trigger: ".computing-list",
             start: "top 70%",
-            once: true,         // 최초 1번만 실행
+            once: true,
             onEnter: () => tl.play(0)
         });
 
-        // 리사이즈 시 애니 없이 위치만 재계산
         window.addEventListener("resize", () => {
             setCardPositions();
         });
     });
 
-// visual board tab
+//  notice
     const tabs = document.querySelectorAll('.board-box-tab > li');
     const tabWrap = document.querySelector('.board-box-tab');
     const boards = document.querySelectorAll('.board-list-box .board-cont');
 
     tabs.forEach((li, i) => {
         li.querySelector('button').addEventListener('click', () => {
-            // 탭 클래스 토글
             tabs.forEach(t => t.classList.remove('on'));
             li.classList.add('on');
             tabWrap.classList.toggle('on-left', i === 0);
             tabWrap.classList.toggle('on-right', i === 1);
 
-            // aria-label 처리
             tabs.forEach(t => t.querySelector('button').removeAttribute('aria-label'));
             const btn = li.querySelector('button');
             btn.setAttribute('aria-label', btn.textContent + ' 선택됨');
 
-            // GSAP으로 슬라이드 애니메이션
             boards.forEach((b, idx) => {
                 if (idx === i) {
                     b.style.position = 'absolute';
                     b.style.zIndex = 1;
+                    const yValue = window.innerWidth >= 1024 ? 50 : 25;
                     gsap.to(b, {
                         duration: 1,
-                        y: 25, // 앞으로 올라오는 효과
+                        y: yValue,
                         ease: "cubic-bezier(0.68, -0.6, 0.32, 1.6)"
                     });
                 } else {
@@ -236,7 +228,7 @@ $(document).ready(function(){
                     b.style.zIndex = 0;
                     gsap.to(b, {
                         duration: 1,
-                        y: 0, // 뒤로 밀린 상태
+                        y: 0,
                         ease: "cubic-bezier(0.68, -0.6, 0.32, 1.6)"
                     });
                 }
@@ -244,16 +236,7 @@ $(document).ready(function(){
         });
     });
 
-
-
-
-
-
-
-
-
-
-    // AI 섹션
+    // AI
     let mm = gsap.matchMedia();
     mm.add("(min-width: 1024px)", () => {
         const items = gsap.utils.toArray(".main-ai-list > li");
@@ -318,7 +301,6 @@ $(document).ready(function(){
                             return;
                         }
                     }
-
                     activated = true;
                     queue.push({ item, targets });
                     runNext();
@@ -327,28 +309,33 @@ $(document).ready(function(){
         });
     });
 
+    // main-tit-box ani
+    document.querySelectorAll(".main-tit-box").forEach((box) => {
+        const label = box.querySelector(".main-label");
+        const p = box.querySelector("p");
+        const h2 = box.querySelector("h2");
+        if (!label || !p || !h2) return;
 
+        gsap.set([label, p, h2], {opacity: 0, y: 30, scale: 1});
 
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: box,
+                start: "top 80%",
+                toggleActions: "play none none reverse",
+            },
+            defaults: {ease: "power3.out"},
+        });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        tl.to(label, {opacity: 1, y: 0, duration: 0.8})
+            .to(p, {opacity: 1, y: 0, duration: 0.8}, "-=0.4")
+            .fromTo(
+                h2,
+                {opacity: 0, y: 20, scale: 1.05},
+                {opacity: 1, y: 0, scale: 1, duration: 1, ease: "power4.out"},
+                "-=0.5"
+            );
+    });
 
 
 });

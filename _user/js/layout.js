@@ -74,7 +74,7 @@ $(document).ready(function () {
         $('.gnb-close, .dimm').on('click', reset);
 
         $dep1A.on('click', function (e) {
-            if(window.innerWidth < 1024){
+            if(window.innerWidth < 1200){
                 let $thisLi = $(this).parent('.dep1');
                 let $currentDep2 = $thisLi.find('.dep2-wrap');
 
@@ -113,15 +113,35 @@ $(document).ready(function () {
 
     /* ===== Web GNB ===== */
     function webGnb() {
-        $('.gnb>li:nth-child(2)').addClass('bg-h');
+        $('.gnb > li').removeClass('bg-h');
+        let bgH = 0;
+        let $target = null;
+
+        $('.gnb > li').each(function () {
+            let liCount = $(this).find('.dep2 > li').length;
+            if (liCount > 0) {
+                let h = $(this).find('.dep2-wrap').outerHeight();
+                if (h > bgH) {
+                    bgH = h;
+                    $target = $(this);
+                }
+            }
+        });
+
+        if ($target) {
+            $target.addClass('bg-h');
+        }
+
+        let headerH = bgH + 119;
+
 
         $dep1A.on({
             mouseenter : function (e) {
                 if(window.innerWidth >= 1200){
-                    let bgH = $('.dep1.bg-h .dep2-wrap').outerHeight();
-                    let headerH = bgH + 119;
+                    // let bgH = $('.dep1.bg-h .dep2-wrap').outerHeight();
+                    // let headerH = bgH + 119;
                     let thisdep2Wrap = $(this).siblings('.dep2-wrap');
-
+                    //
                     $header.addClass('on');
                     $dimm.addClass('on');
                     $dep2Wrap.css('height',bgH).removeClass('on');
