@@ -183,7 +183,7 @@
   .board-list li {display: table-row; padding: 0; background: #fff; position: relative;}
   .board-list li:hover {border-color: #000;}
   .board-list li>* {padding: 20px 10px; vertical-align: middle; display: table-cell !important; border: 1px solid #f2f2f2;}
-  .board-list li .tit {font-size: 17px; padding: 0;}
+  .board-list li .tit {font-size: 17px; padding: 0; text-align: left; padding: 0 3rem;}
   .board-list li .num {display: table-cell; text-align: center; border-radius: 15px 0 0 15px;}
   .board-list li .unit-type1:after {display: none;}
   .board-list li.no-board {padding: 30px 0 40px;}

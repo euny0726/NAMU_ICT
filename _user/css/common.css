@@ -1764,7 +1764,9 @@ table.tbl {
 
   .board-list li .tit {
     font-size: 17px;
-    padding: 0; }
+    padding: 0;
+    text-align: left;
+    padding: 0 3rem; }
 
   .board-list li .num {
     display: table-cell;

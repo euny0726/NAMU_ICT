@@ -1,4 +1,79 @@
 $(document).ready(function () {
+    gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
+
+    function setupFadeUpAnimations() {
+        document.querySelectorAll("[data-gsap='fade-up']").forEach(el => {
+            gsap.fromTo(el,
+                {opacity: 0, y: 50},
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 80%",
+                        once: true
+                    }
+                }
+            );
+        });
+    }
+    setupFadeUpAnimations();
+
+    document.querySelectorAll(".sub-container").forEach(container => {
+
+        const introTop = container.querySelector(".sub-top");
+        if(introTop) {
+            const introTimeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: introTop,
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            const subTitTop = introTop.querySelector(".sub-tit-top");
+            const h2 = introTop.querySelector("h2");
+
+            if(subTitTop) {
+                introTimeline.from(subTitTop, {
+                    opacity: 0,
+                    filter: "blur(6px)",
+                    y: 20,
+                    duration: 0.8,
+                    ease: "power2.out"
+                });
+            }
+
+            if(h2) {
+                introTimeline.from(h2, {
+                    opacity: 0,
+                    filter: "blur(6px)",
+                    y: 10,
+                    duration: 1,
+                    ease: "power3.out"
+                }, "-=0.4");
+            }
+        }
+
+        container.querySelectorAll(".sub-title-box").forEach(box => {
+            const subTitle = box.querySelector(".sub-title");
+            const subInfo = box.querySelector(".sub-title-info");
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: box,
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                }
+            })
+                .from(subTitle, { x: -40, opacity: 0, duration: 0.8, ease: "power3.out" })
+                .from(subInfo, { opacity: 0, filter: "blur(2px)", duration: 0.8, ease: "power2.out" }, "-=0.4");
+        });
+
+    });
+
 
     //breadcrumbs
     const $breadcrumbs = $('.breadcrumbs'),
@@ -83,8 +158,6 @@ $(document).ready(function () {
         stickyBody();
     });
 
-
-
     // tab
     $('.tab-nav>li').on('click keyup', function () {
         if (!$(this).children('a').hasClass('out-link')) {
@@ -106,29 +179,6 @@ $(document).ready(function () {
     });
 
 
-
-    // const $tblWrap = document.querySelector('.tbl-wrap'),
-    //     $blurTop = document.querySelector('.blur.left'),
-    //     $blurBottom = document.querySelector('.blur.right');
-    //
-    // window.onload = function() {
-    //     if($tblWrap){
-    //         $tblWrap.addEventListener('scroll', () => {
-    //             if ($tblWrap.offsetWidth + $tblWrap.scrollLeft + 20 >= $tblWrap.scrollWidth) {
-    //                 $blurBottom.classList.remove('on');
-    //                 $blurTop.classList.add('on');
-    //             } else if ($tblWrap.offsetWidth + $tblWrap.scrollLeft < $tblWrap.scrollWidth) {
-    //                 $blurTop.classList.add('on');
-    //                 $blurBottom.classList.add('on');
-    //             } else {
-    //                 $blurBottom.classList.add('on');
-    //             }
-    //             if ($tblWrap.scrollLeft <= 10) {
-    //                 $blurTop.classList.remove('on');
-    //             }
-    //         });
-    //     }
-    // };
     // 스크롤 시 가로 스크롤 dimm
     const $tblWrap = $('.tbl-wrap'),
         $blurLeft =  $('.blur.left'),
@@ -184,125 +234,6 @@ $(document).ready(function () {
         tblScrollChk();
     });
 
-    // 경기종목
-    const $sportsItem = $('.sports-tab .item-list>li');
-    let dataSession = sessionStorage.getItem('saveData');
-    let $sportsTabView = $('.sports-tab-view>li'),
-        $tableTabView = $('.table-tab-view>li'),
-        $gameInfoWrap = $('.game-info-wrap');
-        $tableTabViewWrap = $('.table-tab-view-warp');
-    const $sportsWrap = $('.sports-wrap');
-
-
-    if(sessionStorage.getItem('saveData')) {
-        $sportsItem.eq(dataSession).addClass('active').siblings().removeClass('active');
-        $sportsTabView.eq(dataSession).addClass('active').siblings().removeClass('active');
-        $tableTabView.eq(dataSession).addClass('active').siblings().removeClass('active');
-        $('html, body').animate({scrollTop: $sportsWrap.offset().top-150},800);
-    }
-
-    $sportsItem.on('click', function () {
-        let $btnIdx = $(this).index();
-        $gameInfoWrap.removeClass('active');
-        void $gameInfoWrap[0].offsetWidth;
-        $gameInfoWrap.addClass('active');
-
-        $tableTabViewWrap.removeClass('active');
-        void $tableTabViewWrap[0].offsetWidth;
-        $tableTabViewWrap.addClass('active');
-
-        $(this).addClass('active').siblings().removeClass('active');
-        $sportsTabView.eq($btnIdx).addClass('active').siblings().removeClass('active');
-        $tableTabView.eq($btnIdx).addClass('active').siblings().removeClass('active');
-
-        $('html, body').animate({
-            scrollTop: $sportsTabView.eq($btnIdx).offset().top - 150
-        }, 500);
-    });
-
-    setTimeout(function () {
-        sessionStorage.clear();
-    }, 3000);
-
-
-
-    // 경기장안내 추가 240806
-    const $mapBtn = $('button.map-btn'),
-        $popupMap = $('.popup-map-wrap'),
-        $mapSelBtn = $('.map-sel-box button'),
-        $mapSelBox = $('.map-sel-box'),
-        $popupTitle = $('.map-text .title'),
-        $popupAddress = $('.map-text .address span'),
-        $popupClose = $('button.pop-map-close');
-
-    $mapBtn.on('click', function() {
-        const $btn = $(this);
-        const title = $btn.text().trim();
-        const $currentRow = $btn.closest('tr');
-        const address = $currentRow.find('.address').text().trim();
-        const sportsType = $btn.data('sports');
-        $popupMap.show().addClass('open');
-        $popupTitle.text(title);
-        $popupAddress.text(address);
-        $mapSelBtn.text(title);
-        $mapSelBtn.removeClass('on');
-        $('.stadium-map').removeAttr('style');
-        updateMapSelBox(sportsType);
-    });
-
-
-    function updateMapSelBox(sportsType) {
-        $mapSelBox.find('ul.stadium-map').empty();
-        $('button.map-btn').each(function() {
-            const $btn = $(this);
-            if ($btn.data('sports') === sportsType) {
-                const stadiumName = $btn.text().trim();
-                const address = $btn.closest('tr').find('.address').text().trim();
-                $mapSelBox.find('ul.stadium-map').append(`<li><a href="#lnk" data-map="${address}">${stadiumName}</a></li>`);
-            }
-        });
-    }
-
-    $('html').on('click',function (e) {
-        if($(e.target).hasClass('popup-map-wrap')){
-            $(e.target).hide().removeClass('open');
-            $('body').removeClass('on');
-        }
-    });
-
-    $popupClose.on('click',function () {
-        $popupMap.hide().removeClass('open');
-        $('body').removeClass('on');
-    });
-
-    $mapSelBtn.on('click',function () {
-        if(!$(this).hasClass('on')){
-            $(this).addClass('on');
-            $(this).siblings('.stadium-map').stop().slideDown();
-        } else {
-            $(this).removeClass('on');
-            $(this).siblings('.stadium-map').stop().slideUp();
-        }
-    });
-
-    $(document).on('click', '.stadium-map>li', function () {
-        let placeLi = $(this).parent().html();
-        let elTarget = $(this).find('a').text();
-
-        // if(window.innerWidth>=1024){
-        if($popupMap.css('display') == 'none'){
-            $mapSelBoxWrap.html(placeLi);
-            $('.stadium-map').removeAttr('style');
-        }
-        $popupMap.show().addClass('open');
-        $('.popup-map-wrap .map-sel-box>button').text(elTarget);
-        // }
-
-
-        $(this).addClass('active').siblings().removeClass('active');
-        $mapSelBtn.removeClass('on');
-        $(this).parent().stop().slideUp();
-    });
 
     // 확대보기 버튼
     $('.btn-img-popup').on('click',function () {

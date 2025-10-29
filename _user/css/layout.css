@@ -106,7 +106,7 @@ body.on {overflow: hidden;}
 /*** header e ***/
 
 /* footer s */
-.footer {position: relative; flex-shrink: 0; margin-top: 10rem; z-index: 0;background: linear-gradient(180deg, #020B13 50%, #29354B 100%); padding-top: 12rem; color: #E5E7EB; font-size: 1.4rem; word-break: keep-all;}
+.footer {position: relative; flex-shrink: 0; z-index: 0;background: linear-gradient(180deg, #020B13 50%, #29354B 100%); padding-top: 12rem; color: #E5E7EB; font-size: 1.4rem; word-break: keep-all;}
 .footer a {color: #E5E7EB;}
 .footer-inner {max-width: 1580px; margin: 0 auto; box-sizing: border-box;}
 .footer-top {padding: 0 1.5rem 6rem;}
@@ -144,7 +144,7 @@ body.on {overflow: hidden;}
     .footer-sns a:hover {border-color: rgba(255 255 255 / 50%);}
 }
 @media screen and (min-width: 1024px){
-    .footer {margin-top: 20rem; padding-top: 20rem; font-size: 1.5rem;}
+    .footer {padding-top: 20rem; font-size: 1.5rem;}
     .footer-top {display: flex; padding: 0 3rem 10rem; justify-content: space-between;}
     .info-list {display: flex; gap: 7rem;}
     .info-list > li + li {padding-top: 0;}
